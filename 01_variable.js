@@ -14,3 +14,9 @@ console.log(`Your name is ${name} and Your age is ${age}`);
 let isStudent = true;
 console.log(typeof(isStudent));
 console.log(`Rahul is student: ${isStudent}`);
+
+
+const PI = 3.14;
+let radius = 2;
+let circumference = 2 * PI * radius;
+console.log(circumference);

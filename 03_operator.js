@@ -49,3 +49,32 @@ console.log(
 Discount: ${discount}%.
 Final Amount: $${purchaseAmount - purchaseAmount * (discount / 100)}`
 );
+
+
+// -------------------------- Logical Operator ------------------------
+let temp = 350;
+
+if (temp >= 0 && temp <= 30) {
+    console.log("Weather is Good")
+}
+
+else {
+    console.log("Weather is Bad")
+}
+
+if (temp <= 0 || temp <= 30) {
+    console.log("Weather is extreme cold")
+}
+
+else {
+    console.log("Weather is Bad")
+}
+
+let isLoggedIn = true;
+
+if (!isLoggedIn) {
+    console.log("Loggin first");
+}
+else {
+    console.log("Welcome Back");
+}

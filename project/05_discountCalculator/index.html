@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discount Calculator</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <h1>Discount Calculator</h1>
+
+        <p>
+            Enter the product price and discount percentage to calculate
+            the final amount after discount.
+        </p>
+
+        <label for="productAmount">
+            Product Price (₹)
+        </label>
+        <br>
+        <input type="number" id="productAmount" placeholder="Example: 1000">
+
+        <br><br>
+
+        <label for="discountAmount">
+            Discount Percentage (%)
+        </label>
+        <br>
+        <input type="number" id="discountAmount" placeholder="Example: 20">
+
+        <br><br>
+
+        <button id="calcBtn">
+            Calculate Final Price
+        </button>
+
+        <h3 id="result">
+            Final Price: ₹0
+        </h3>
+
+    </div>
+
+    <script src="./index.js"></script>
+</body>
+
+</html>

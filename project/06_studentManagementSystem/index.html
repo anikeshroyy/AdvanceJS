@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Student Management System</h1>
+        <p>Manage all your Student in one palace!</p>
+
+        <label for="studentName">Student Name</label>
+        <input type="text" placeholder="Enter Student Name" id="studentName">
+
+        <button id="addStudentBtn">Add Student</button>
+
+        <div class="childContainer">
+            <div class="studentContainer">
+                <h3>Student List</h3>
+                <ol id="studentList">
+                </ol>
+                <br>
+                <h5 id="totalStudent"></h5>
+                <h5 id="errMsg" style="color: red;"></h5>
+            </div>
+            <div class="studentContainer">
+                <button id="removeFirstStudentBtn">Remove First Student</button>
+                <br>
+                <button id="removeLastStudentBtn">Remove Last Student</button>
+                <br>
+                <label for="addStudentAtFirt">Student Name</label>
+                <input type="text" id="addStudentAtFirt" placeholder="Enter Student Name">
+                <button id="addFirstStudentBtn">Add Student at First</button>
+                <br>
+                <div id="srchContainer">
+                    <label for="searchStudent">Search Student</label>
+                    <input type="text" id="searchStudent" placeholder="Enter Student Name">
+                    <button id="searchStudentBtn">Search Student</button>
+                    <p id="dispResult" style="display: none;"></p>
+                </div>
+                <button id="sortStudentBtn">Sort Student by A to Z</button>
+                <ol id="sortedStudent"></ol>
+                <br>
+                <button id="revStudentBtn">Reverse Student</button>
+                <ol id="revStudent"></ol>
+            </div>
+        </div>
+    </div>
+
+    <script src="./index.js"></script>
+</body>
+
+</html>

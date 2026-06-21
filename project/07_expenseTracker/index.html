@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="ie-li-container">
+        <div class="container" id="mainContainer">
+            <h1>Expence Tracker</h1>
+            <label for="userIncome">Add Income</label>
+            <input type="text" id="userIncome">
+            <button id="incomeBtn">Add Income</button>
+            <p id="incomeErrMsg"></p>
+            <br>
+            <label for="userExpense">Add Expense</label>
+            <input type="text" id="userExpense">
+            <button id="expenseBtn">Add Expense</button>
+            <p id="expenseErrMsg"></p>
+        </div>
+
+        <div class="container subContainer">
+            <div class="incomeContainer">
+                <h3 id="tIncome">Income</h3>
+                <ul id="incomeItem"></ul>
+            </div>
+            <div class="expenseContainer">
+                <h3 id="tExpenses">Expenses</h3>
+                <ul id="expenseItem"></ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h3 id="avlblAmount">Available Fund</h3>
+    </div>
+
+    <script src="./index.js"></script>
+</body>
+
+</html>

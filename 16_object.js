@@ -59,3 +59,8 @@ customer.completePurchase();
 for (const property in customer.address){
     console.log(customer.address[property])
 }
+
+console.log(typeof(customer))
+console.log(typeof(customer.fullName))
+console.log(typeof(customer.cart))
+console.log(typeof(customer.address))

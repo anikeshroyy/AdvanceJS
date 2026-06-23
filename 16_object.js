@@ -56,11 +56,29 @@ console.log(`customer street address is : `, customer.address.street);
 console.log(`available payment method :`, customer.paymentMethod);
 customer.completePurchase();
 
-for (const property in customer.address){
+for (const property in customer.address) {
     console.log(customer.address[property])
 }
 
-console.log(typeof(customer))
-console.log(typeof(customer.fullName))
-console.log(typeof(customer.cart))
-console.log(typeof(customer.address))
+console.log(typeof (customer))
+console.log(typeof (customer.fullName))
+console.log(typeof (customer.cart))
+console.log(typeof (customer.address))
+
+const objArr = [
+    {
+        name: "papaya",
+        colour: "yellow",
+    },
+    {
+        name: "tomato",
+        colour: "red",
+    },
+    {
+        name: "brinjal",
+        colour: "green",
+    },
+]
+console.log(objArr[0].name)
+console.log(objArr[1].colour)
+console.log(objArr[2].name)

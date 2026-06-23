@@ -78,3 +78,15 @@ if (!isLoggedIn) {
 else {
     console.log("Welcome Back");
 }
+
+// -------------------------- Spread Operator ------------------------
+let fruits = ["apple", "guava", "bnana"];
+let vegetables = ["potato", "tomato", "brinjal"];
+let foods = [...fruits, ...vegetables, "papaya", "watermelon"];
+console.log(foods);
+
+let myName = "Anikesh Roy";
+let letters = [...myName];
+console.log(letters)
+letters = [...myName].join("");
+console.log(letters)

@@ -103,3 +103,11 @@ console.table(books.filter((bk) => bk.name.includes("The")))
 console.table(books.filter((bk) => bk.genre === "Programming" || bk.genre === "Technology"))
 console.table(books.filter((bk) => bk.publishYear >= 2018 && bk.publishYear <= 2022))
 console.table(books.filter((bk) => bk.genre !== "Programming"))
+
+console.log("-----------------------map()----------------------")
+
+const arrayOfNumbers = [5, 7, 2, 4, 11, 6, 3, 5, 8, 12, 10];
+console.log(arrayOfNumbers.map((numArr) => numArr * 2));
+console.table(arrayOfNumbers);
+console.table(arrayOfNumbers.map((numArr) => numArr + 5).filter((numbersArr) => numbersArr >= 15));
+console.log(arrayOfNumbers.map((numArr) => { return numArr * 2 - 2}).filter((numArr) => {return numArr >= 5}))

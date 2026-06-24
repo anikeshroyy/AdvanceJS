@@ -26,6 +26,16 @@ nums.forEach((value, index) => {
     console.log(value + index);
 });
 
+let newCustomer = [];
+const noOfCustomers = [5, 7, 6, 9, 4, 2, 3];
+noOfCustomers.forEach((cumNo) => {
+    if (cumNo >= 5) {
+        newCustomer.push(cumNo);
+    }
+})
+
+console.log(newCustomer)
+
 console.log("-----------------------filter()----------------------")
 const myNumber = [5, 7, 8, 4, 6, 9, 12, 27, 3, 16];
 let myNumbers = myNumber.filter((num) => num >= 5);
@@ -110,4 +120,4 @@ const arrayOfNumbers = [5, 7, 2, 4, 11, 6, 3, 5, 8, 12, 10];
 console.log(arrayOfNumbers.map((numArr) => numArr * 2));
 console.table(arrayOfNumbers);
 console.table(arrayOfNumbers.map((numArr) => numArr + 5).filter((numbersArr) => numbersArr >= 15));
-console.log(arrayOfNumbers.map((numArr) => { return numArr * 2 - 2}).filter((numArr) => {return numArr >= 5}))
+console.log(arrayOfNumbers.map((numArr) => { return numArr * 2 - 2 }).filter((numArr) => { return numArr >= 5 }))

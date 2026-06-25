@@ -134,3 +134,7 @@ console.log(result)
 const newResult = books.some((newBooks) => newBooks.publishYear > 2022)
 console.log(newResult)
 
+console.log("-----------------------every()----------------------")
+const newBookName = books.every((newBook) => newBook.edition >= 1)
+console.log(newBookName)
+console.log(books.every((newBook) => newBook.publishYear > 2020))

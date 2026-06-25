@@ -127,3 +127,10 @@ console.log(books.find((books) => books.edition > 1))
 console.log(books.find((books) => books.genre === "Programming"))
 console.log(books.find((books) => books.publishYear > 2022))
 console.log(books.find((books) => books.genre === "Fantasy"))
+
+console.log("-----------------------some()----------------------")
+const result = books.some((newBooks) => newBooks.genre === "Horror")
+console.log(result)
+const newResult = books.some((newBooks) => newBooks.publishYear > 2022)
+console.log(newResult)
+

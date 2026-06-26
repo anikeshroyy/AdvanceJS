@@ -180,17 +180,36 @@ document.getElementById("filterBtn").onclick = () => {
 
 // ------------------------- Sort Employee by Salary-------------------------
 document.getElementById("salarySortBtn").onclick = () => {
-    let filetrSalary = document.getElementById("sortEmpBySalary").value;
+    let sortSalary = document.getElementById("sortEmpBySalary").value;
     document.getElementById("employeeData").innerHTML = "";
-    if (filetrSalary === "hTl") {
-        const fileredSalary = employeeArr.sort((a, b) => {
+    if (sortSalary === "hTl") {
+        const sortedSalary = employeeArr.sort((a, b) => {
             return b.salary - a.salary;
         })
         displayEmployee()
     }
     else {
-        const fileredSalary = employeeArr.sort((a, b) => {
+        const sortedSalary = employeeArr.sort((a, b) => {
             return a.salary - b.salary;
+        })
+        displayEmployee()
+    }
+
+}
+
+// ------------------------- Sort Employee by Name-------------------------
+document.getElementById("nameSortBtn").onclick = () => {
+    let nameSort = document.getElementById("sortEmpByName").value;
+    document.getElementById("employeeData").innerHTML = "";
+    if (nameSort === "zTa") {
+        const sortedName = employeeArr.sort((a, b) => {
+            return b.name.localeCompare(a.name);
+        })
+        displayEmployee()
+    }
+    else {
+        const sortedName = employeeArr.sort((a, b) => {
+            return a.name.localeCompare(b.name);
         })
         displayEmployee()
     }

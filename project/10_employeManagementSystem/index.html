@@ -26,12 +26,14 @@
         <button id="addEmployeeBtn">Add Employee</button>
         <button id="resetInputBtn">Reset Form</button>
         <hr>
+
         <h1>Search</h1>
         <label for="">Search Employee</label>
         <br>
         <input type="text" id="srchemp" placeholder="Enter Employe Name">
         <button id="srchBtn">Search</button>
         <br>
+
         <h1>Filter</h1>
         <label for="filterEmp">Filter Employee by Department</label>
         <br>
@@ -43,6 +45,7 @@
         </select>
         <button id="filterBtn">Filter</button>
         <br>
+
         <h1>Sort</h1>
         <label for="sortEmpBySalary">Sort Employee by Salary</label>
         <br>
@@ -51,11 +54,22 @@
             <option value="lTh">Lowest to Highest</option>
         </select>
         <button id="salarySortBtn">Sort</button>
+        <br>
+
+        <label for="sortEmpByName">Sort Employee by Name</label>
+        <br>
+        <select name="" id="sortEmpByName">
+            <option value="aTz">A to Z</option>
+            <option value="zTa">Z to A</option>
+        </select>
+        <button id="nameSortBtn">Sort</button>
     </div>
+
     <div class="employe-data-container">
         <h2>Employee History</h2>
         <ul id="employeeData"></ul>
     </div>
+
     <div class="action-container">
         <h2>Take Action</h2>
         <button id="deletAllEmployee">Delete All Employee</button>

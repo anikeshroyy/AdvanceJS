@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employe Management System</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Employe Management System</h1>
+        <div class="input-container">
+            <label for="employeName">Employe Name <span>*</span></label>
+            <input type="text" id="employeeName" placeholder="Enter the name of employee">
+            <label for="employeeDepartment">Employe Department <span>*</span></label>
+            <select name="" id="employeeDepartment">
+                <option value="Labour">Labour</option>
+                <option value="It">Information technology</option>
+                <option value="Manager">Manager</option>
+            </select>
+            <label for="employeeSalary">Employe Salary <span>*</span></label>
+            <input type="text" id="employeeSalary" placeholder="Enter the salary of employee">
+        </div>
+        <button id="addEmployeeBtn">Add Employee</button>
+        <button id="resetInputBtn">Reset Form</button>
+        <hr>
+        <h1>Search</h1>
+        <label for="">Search Employee</label>
+        <br>
+        <input type="text" id="srchemp" placeholder="Enter Employe Name">
+        <button id="srchBtn">Search</button>
+        <br>
+        <h1>Filter</h1>
+        <label for="">Filter Employee</label>
+        <br>
+        <select name="" id="filterEmp">
+            <option value="All">All</option>
+            <option value="Labour">Labour</option>
+            <option value="It">Information technology</option>
+            <option value="Manager">Manager</option>
+        </select>
+        <button id="filterBtn">Filter</button>
+    </div>
+    <div class="employe-data-container">
+        <h2>Employee History</h2>
+        <ul id="employeeData"></ul>
+    </div>
+    <div class="action-container">
+        <h2>Take Action</h2>
+        <button id="deletAllEmployee">Delete All Employee</button>
+    </div>
+
+    <script src="./index.js"></script>
+</body>
+
+</html>

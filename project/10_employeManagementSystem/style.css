@@ -1,0 +1,82 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    gap: 20px;
+    min-height: 100vh;
+    background-color: rgb(2, 22, 58);
+    color: aliceblue;
+    padding: 20px;
+}
+
+.container,
+.employe-data-container,
+.action-container {
+    border: 2px solid rgb(255, 255, 255);
+    padding: 10px;
+    border-radius: 12px;
+    width: 600px;
+    max-height: 700px;
+    overflow-y: auto;
+}
+
+.input-container {
+    margin: 10px 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 05px;
+}
+
+input,
+button,
+select {
+    padding: 08px 05px;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 08px;
+}
+
+button {
+    cursor: pointer;
+}
+
+span {
+    color: red;
+}
+
+hr {
+    margin: 10px 0px;
+    border: 2px solid white;
+}
+
+h2 {
+    margin-bottom: 10px;
+}
+
+.employee-card {
+    background: #fff;
+    color: #222;
+    padding: 15px;
+    margin-bottom: 12px;
+    border-radius: 10px;
+    border-left: 5px solid #3b82f6;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.employee-card p {
+    margin: 6px 0;
+}
+
+#dltBtn {
+    padding: 08px 05px;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 08px;
+    color: rgb(255, 255, 255);
+    background-color: red;
+}

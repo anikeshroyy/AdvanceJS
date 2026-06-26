@@ -120,7 +120,7 @@ document.getElementById("srchBtn").onclick = () => {
 };
 
 
-// ------------------------- Filter Employee -------------------------
+// ------------------------- Filter Employee by Department-------------------------
 
 document.getElementById("filterBtn").onclick = () => {
 
@@ -167,6 +167,25 @@ document.getElementById("filterBtn").onclick = () => {
     }
 
 };
+
+// ------------------------- Sort Employee by Salary-------------------------
+document.getElementById("salarySortBtn").onclick = () => {
+    let filetrSalary = document.getElementById("sortEmpBySalary").value;
+    document.getElementById("employeeData").innerHTML = "";
+    if (filetrSalary === "hTl") {
+        const fileredSalary = employeeArr.sort((a, b) => {
+            return b.salary - a.salary;
+        })
+        displayEmployee()
+    }
+    else {
+        const fileredSalary = employeeArr.sort((a, b) => {
+            return a.salary - b.salary;
+        })
+        displayEmployee()
+    }
+
+}
 
 // ------------------------- Delete Specific Employe  -------------------------
 function deleteEmployee(id) {

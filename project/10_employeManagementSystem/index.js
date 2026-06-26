@@ -30,6 +30,16 @@ document.getElementById("addEmployeeBtn").onclick = () => {
     // Convert salary into Number
     const empSalary = Number(document.getElementById("employeeSalary").value);
 
+    // Employe check (exist or not)
+    const employeeExist = employeeArr.some((employee => {
+        return employee.name.toLowerCase() === empName.toLowerCase();
+    }))
+
+    if (employeeExist) {
+        errMsg("Employee Already Added in DB")
+        return
+    }
+
     // Create Employee Object
     const employee = {
         id: employeeId++,          // Auto Increment Employee ID

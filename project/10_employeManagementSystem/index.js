@@ -51,7 +51,6 @@ document.getElementById("addEmployeeBtn").onclick = () => {
     // Store employee inside array
     employeeArr.push(employee);
 
-    console.log(employeeArr);
 
     // Clear all input fields
     clearUi();
@@ -69,7 +68,6 @@ document.getElementById("resetInputBtn").onclick = () => {
 
     clearUi();
 
-    console.log("All Inputs are cleared");
 
 };
 
@@ -220,7 +218,6 @@ document.getElementById("nameSortBtn").onclick = () => {
 function employeeCount() {
     const totalEmploye = employeeArr.length;
     document.getElementById("totalEmploye").textContent = `Total Employe : ${totalEmploye}`
-    console.log(totalEmploye)
 }
 
 // ------------------------- Total Salary -------------------------
@@ -248,7 +245,6 @@ function highestSalary() {
             employeHighestSalary = employe.salary;
         }
     })
-    console.log(employeHighestSalary);
     document.getElementById("highestSalary").textContent = `Highest Salary : ${employeHighestSalary}`
 
 }
@@ -266,7 +262,6 @@ function lowestSalary() {
             employeLowestSalary = employe.salary;
         }
     })
-    console.log(employeLowestSalary);
     document.getElementById("lowestSalary").textContent = `Lowest Salary : ${employeLowestSalary}`
 
 }
@@ -356,7 +351,7 @@ function employeeList(emp) {
 
             <p><strong>Salary:</strong> ₹${emp.salary}</p>
 
-            <button onclick="deleteEmployee(${emp.id})">
+            <button class="dltEmployeeBtn" onclick="deleteEmployee(${emp.id})">
                 Delete Employee
             </button>
 

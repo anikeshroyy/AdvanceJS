@@ -73,7 +73,7 @@ h2 {
     margin: 6px 0;
 }
 
-#dltBtn {
+.dltEmployeeBtn {
     padding: 08px 05px;
     border: 1px solid rgb(0, 0, 0);
     border-radius: 08px;

@@ -216,11 +216,71 @@ document.getElementById("nameSortBtn").onclick = () => {
 
 }
 
-// ------------------------- Sort Employee by Name-------------------------
+// ------------------------- Total Employee -------------------------
 function employeeCount() {
     const totalEmploye = employeeArr.length;
     document.getElementById("totalEmploye").textContent = `Total Employe : ${totalEmploye}`
     console.log(totalEmploye)
+}
+
+// ------------------------- Total Salary -------------------------
+const employeeSalary = () => {
+    let totalEmployeeSalary = 0;
+    employeeArr.forEach((employee) => {
+        totalEmployeeSalary += employee.salary;
+    })
+
+    document.getElementById("totalSalary").textContent = `Total Salary : ${totalEmployeeSalary}`
+    return totalEmployeeSalary;
+}
+
+// ------------------------- Highest Salary -------------------------
+function highestSalary() {
+    if (employeeArr.length == 0) {
+        document.getElementById("highestSalary").textContent = `Highest Salary : 0`
+        return;
+    }
+
+    let employeHighestSalary = employeeArr[0].salary;
+
+    employeeArr.forEach((employe) => {
+        if (employeHighestSalary < employe.salary) {
+            employeHighestSalary = employe.salary;
+        }
+    })
+    console.log(employeHighestSalary);
+    document.getElementById("highestSalary").textContent = `Highest Salary : ${employeHighestSalary}`
+
+}
+// ------------------------- Lowest Salary -------------------------
+function lowestSalary() {
+    if (employeeArr.length == 0) {
+        document.getElementById("lowestSalary").textContent = `Lowest Salary : 0`
+        return;
+    }
+
+    let employeLowestSalary = employeeArr[0].salary;
+
+    employeeArr.forEach((employe) => {
+        if (employeLowestSalary > employe.salary) {
+            employeLowestSalary = employe.salary;
+        }
+    })
+    console.log(employeLowestSalary);
+    document.getElementById("lowestSalary").textContent = `Lowest Salary : ${employeLowestSalary}`
+
+}
+
+// ------------------------- Lowest Salary -------------------------
+function avgSalary() {
+    if (employeeArr.length == 0) {
+        document.getElementById("averageSalary").textContent = `Average Salary : 0`
+        return;
+    }
+
+    let totalSal = employeeSalary();
+    let avgSal = totalSal / employeeArr.length;
+    document.getElementById("averageSalary").textContent = `Average Salary : ${avgSal}`
 }
 
 // ------------------------- Delete Specific Employe  -------------------------
@@ -262,11 +322,19 @@ function displayEmployee() {
     employeeArr.forEach((employeeDetails) => {
 
         employeeList(employeeDetails);
-
+        updateSalary()
     });
-    employeeCount()
+
 }
 
+// ------------------------- Salary Ui Update -------------------------
+function updateSalary() {
+    employeeCount()
+    employeeSalary()
+    highestSalary()
+    lowestSalary()
+    avgSalary()
+}
 
 // ------------------------- Display Single Employee -------------------------
 

@@ -216,6 +216,13 @@ document.getElementById("nameSortBtn").onclick = () => {
 
 }
 
+// ------------------------- Sort Employee by Name-------------------------
+function employeeCount() {
+    const totalEmploye = employeeArr.length;
+    document.getElementById("totalEmploye").textContent = `Total Employe : ${totalEmploye}`
+    console.log(totalEmploye)
+}
+
 // ------------------------- Delete Specific Employe  -------------------------
 function deleteEmployee(id) {
     employeeArr = employeeArr.filter((emp) => {
@@ -257,7 +264,7 @@ function displayEmployee() {
         employeeList(employeeDetails);
 
     });
-
+    employeeCount()
 }
 
 

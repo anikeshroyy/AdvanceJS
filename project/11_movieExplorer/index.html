@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Explorer</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="main-container">
+        <h1>Movie Explorer</h1>
+        <div class="filter-ui">
+            <button id="allMovies">All Movies</button>
+            <button id="topRatedMovies">Top Rated Movies</button>
+            <button id="newMovies">Newest Movies</button>
+            <button id="oldMovies">Oldest Movies</button>
+            <button id="comedyMovie">Comedy Movies</button>
+            <button id="horrorMovies">Horror Movies</button>
+            <button id="actionMovies">Action Movies</button>
+            <!-- <button id="longMovies">Longest Movies</button> -->
+            <!-- <button id="shortMovies">Shortest Movies</button> -->
+
+        </div>
+        <div class="movie-container" id="movieCard">
+            <p>This is movie moviecard</p>
+        </div>
+    </div>
+    <div class="secondary-container">
+        <h1>List Your Movie Now</h1>
+        <div class="addMovie-Ui">
+            <div class="field">
+                <label for="movieTitle">Movie Title</label>
+                <input type="text" placeholder="Enter Movie Name" id="movieTitle">
+            </div>
+
+            <div class="field">
+                <label for="movieGenre">Movie Genre</label>
+                <select name="" id="movieGenre">
+                    <option value="" disabled selected hidden>Select an option</option>
+                    <option value="horror">Horror</option>
+                    <option value="action">Action</option>
+                    <option value="comedy">Comedy</option>
+                    <option value="adventure">Adventure</option>
+                </select>
+            </div>
+
+            <div class="field">
+                <label for="movieLanguage">Movie Language</label>
+                <select name="" id="movieLanguage">
+                    <option value="" disabled selected hidden>Select an option</option>
+                    <option value="english">English</option>
+                    <option value="hindi">Hindi</option>
+                    <option value="spanish">Spanish</option>
+                </select>
+            </div>
+
+            <div class="field">
+                <label for="">Release Year</label>
+                <select name="" id="movieReleaseYear">
+                    <option value="" disabled selected hidden>Select an option</option>
+                    <option value="2026">2026</option>
+                    <option value="2025">2025</option>
+                    <option value="2024">2024</option>
+                    <option value="2023">2023</option>
+                </select>
+            </div>
+
+            <div class="field">
+                <label for="">Movie Duration</label>
+                <select name="" id="movieaDuration">
+                    <option value="" disabled selected hidden>Select an option</option>
+                    <option value="120">2 Hrs</option>
+                    <option value="150">2.5 Hrs</option>
+                    <option value="60">1 Hrs</option>
+                    <option value="90">1.5 Hrs</option>
+                </select>
+            </div>
+
+            <div class="field">
+                <label for="">Movie Rating</label>
+                <input type="number" placeholder="Enter Movie Rating" id="movieRating" step="0.1">
+            </div>
+            <button id="addMovieBtn">Add Movie</button>
+        </div>
+
+        <div class="action-container">
+            <div class="field">
+                <label for="searchMovie">Search Movie</label>
+                <input type="text" placeholder="Enter Movie Name to Search" id="searchMovie">
+            </div>
+            <div class="field">
+                <label for="">Sort Movie</label>
+                <select name="" id="sortMovie">
+                    <option value="" disabled selected hidden>Select an option</option>
+                    <option value="yNTO">Sort By New - Old</option>
+                    <option value="yOTN">Sort By Old - New</option>
+                    <option value="gATZ">Sort By Genre A - Z</option>
+                    <option value="gZTA">Sort By Genre Z - A</option>
+                    <option value="tATZ">Sort By Title A - Z</option>
+                    <option value="tZTA">Sort By Title Z - A</option>
+                </select>
+                <button id="sortBtnDashboard">Sort</button>
+            </div>
+        </div>
+
+        <div class="stats-ui">
+            <p id="totalMovies">Total Movies : 0</p>
+            <p id="highestRating">Highest Rating : 0</p>
+            <p id="lowestRating">Lowest Rating : 0</p>
+            <p id="totalDuration">Ttoal Duration : 0</p>
+        </div>
+
+    </div>
+
+    <script src="./index.js"></script>
+</body>
+
+</html>

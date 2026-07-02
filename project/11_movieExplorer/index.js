@@ -43,7 +43,7 @@ addMovieBtn.onclick = function addMovie() {
         language: movieLanguage.value,
         releaseYear: Number(movieReleaseYear.value),
         duration: Number(movieDuration.value),
-        rating: movieRating.value,
+        rating: Number(movieRating.value),
     }
 
     moviesArr.push(movie);
@@ -191,10 +191,10 @@ function totalMoviesOnDashboard() {
 
 function totalDurationOnDashboard() {
     let totalMovieDuration = 0;
-    const totalDur = moviesArr.forEach((movie) => {
+    moviesArr.forEach((movie) => {
         totalMovieDuration += movie.duration;
     });
-    totalDuration.textContent = `Total Duration : ${totalMovieDuration}`;
+    totalDuration.textContent = `Total Duration : ${totalMovieDuration / 60} Hrs`;
 }
 
 function highestRatingOnDashboard() {
@@ -222,4 +222,73 @@ function updateDashboard() {
     totalDurationOnDashboard();
     highestRatingOnDashboard();
     lowestRatingOnDashboard();
+}
+
+function avgRating() {
+    let sumOfAllRating = 0;
+    moviesArr.forEach((movie) => {
+        sumOfAllRating += Number(movie.rating);
+    })
+
+    let avg = sumOfAllRating / moviesArr.length;
+    console.log("Avg RAting :", avg);
+}
+
+avgRating();
+
+
+// Search Movie written by chatGpt for learning purpose-----------------------------------------------------------------------------------
+const searchMovie = document.getElementById("searchMovie");
+
+let searchTimer;
+
+searchMovie.addEventListener("input", () => {
+
+    clearTimeout(searchTimer);
+
+    searchTimer = setTimeout(() => {
+
+        searchMovies();
+
+    }, 300);
+
+});
+
+function searchMovies() {
+
+    const searchText = searchMovie.value.trim().toLowerCase();
+
+    if (searchText === "") {
+
+        displayUi();
+
+        return;
+
+    }
+
+    movieCard.innerHTML = "";
+
+    const searchedMovies = moviesArr.filter((movie) => {
+
+        return movie.title.toLowerCase().includes(searchText);
+
+    });
+
+    if (searchedMovies.length > 0) {
+
+        searchedMovies.forEach((movie) => {
+
+            displayMovies(movie);
+
+        });
+
+    }
+    else {
+
+        movieCard.innerHTML = `
+            <h2>No Movie Found</h2>
+        `;
+
+    }
+
 }

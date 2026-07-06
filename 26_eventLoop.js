@@ -1,1 +1,1 @@
-console.log("Event Loop")
+console.log("Event Loop");

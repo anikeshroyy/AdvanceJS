@@ -41,6 +41,12 @@ function checkPass() {
 }
 
 
+function fetchGithub() {
+    console.log("Fetching user data from Github")
+    const gitApi = "https://api.github.com/users/anikeshroyy/";
+    return fetch(gitApi);
+}
+
 
 checkCredential()
     .then(function (message) {
@@ -51,6 +57,18 @@ checkCredential()
     .then((message) => {
         console.log(message)
         console.log("Login Success")
+
+        return fetchGithub();
+    })
+    .then(function (response) {
+        return response.json();
+    })
+    .then((data) => {
+        console.log(data);
+        console.log(data.name);
+        console.log(data.followers);
+        console.log(data.public_repos);
+        console.log(data.bio);
     })
     .catch(function (error) {
         console.log(error)

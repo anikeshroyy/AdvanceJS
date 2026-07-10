@@ -43,7 +43,7 @@ function checkPass() {
 
 function fetchGithub() {
     console.log("Fetching user data from Github")
-    const gitApi = "https://api.github.com/users/anikeshroyy/";
+    const gitApi = "https://api.github.com/users/anikeshroyy";
     return fetch(gitApi);
 }
 
@@ -64,32 +64,15 @@ checkCredential()
         return response.json();
     })
     .then((data) => {
-        console.log(data);
-        console.log(data.name);
-        console.log(data.followers);
-        console.log(data.public_repos);
-        console.log(data.bio);
+        // console.log(data);
+        console.log("Github UserName -", data.name);
+        console.log("Github Flowers -", data.followers);
+        console.log("Github Repo -", data.public_repos);
+        console.log("Github Bio -", data.bio);
     })
     .catch(function (error) {
         console.log(error)
     })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -123,4 +106,3 @@ checkCredential()
 
 // 9. If the Promise is rejected,
 //    the attached .catch() callback is executed and receives the rejection reason.
-

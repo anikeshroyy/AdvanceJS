@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-color: #202940;
+    --text-color: white;
+    --primary: #8BAE66;
+    --secondary: #FF714B;
+
+    --input-bg: white;
+    --input-text: #17153B;
+    --placeholder-color: #666;
+
+    --btn-bg: #fff;
+    --btn-text-color: #17153B;
+
+
+}
+
+.light-theme {
+    --bg-color: #ffffff;
+    --text-color: #17153B;
+    --primary: #303841;
+    --secondary: #0046FF;
+
+    --input-bg: #17153B;
+    --input-text: #fff;
+    --placeholder-color: #aaa;
+
+
+    --btn-bg: #17153B;
+    --btn-text-color: #fff;
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+#nav-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
+    border-radius: 40px;
+    /* background-color: #8BAE66; */
+    border: 2px solid var(--secondary);
+    padding: 15px;
+
+}
+
+/* From Uiverse.io by LightAndy1 */
+.group {
+    display: flex;
+    line-height: 28px;
+    align-items: center;
+    position: relative;
+    max-width: 290px;
+}
+
+.input {
+    font-family: "Montserrat", sans-serif;
+    width: 100%;
+    height: 35px;
+    padding-left: 2.5rem;
+    box-shadow: 0 0 0 1.5px #2b2c37, 0 0 25px -17px #000;
+    border: 0;
+    border-radius: 12px;
+    background-color: var(--input-bg);
+    outline: none;
+    color: var(--input-text);
+    transition: all 0.25s cubic-bezier(0.19, 1, 0.22, 1);
+    cursor: text;
+    z-index: 0;
+}
+
+.input::placeholder {
+    color: var(--placeholder-color);
+}
+
+.input:hover {
+    box-shadow: 0 0 0 2.5px #2f303d, 0px 0px 25px -15px #000;
+}
+
+.input:active {
+    transform: scale(0.95);
+}
+
+.input:focus {
+    box-shadow: 0 0 0 2.5px #2f303d;
+}
+
+.search-icon {
+    position: absolute;
+    left: 1rem;
+    fill: var(--input-text);
+    width: 1rem;
+    height: 1rem;
+    pointer-events: none;
+    z-index: 1;
+}
+
+#currentLocation {
+    padding: 8px;
+    border-radius: 12px;
+    border: solid var(--btn-bg);
+}
+
+.theme-icon {
+    font-size: 40px;
+}
+
+.theme-icon:hover {
+    cursor: pointer;
+}
+
+button {
+    background-color: var(--btn-bg);
+    color: var(--btn-text-color);
+}

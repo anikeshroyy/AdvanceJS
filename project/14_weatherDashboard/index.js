@@ -1,8 +1,30 @@
+// Theme Toggle -------------------------------------------------------
 const themeBtn = document.getElementById("themeIcon");
 
 themeBtn.addEventListener("click", () => {
     document.documentElement.classList.toggle("light-theme");
+
+    if (document.documentElement.classList.contains("light-theme")) {
+        localStorage.setItem("theme", "light")
+
+
+         themeBtn.classList.remove("fa-sun");
+        themeBtn.classList.add("fa-moon");
+          
+    }
+    else {
+        localStorage.setItem("theme", "dark")
+
+         themeBtn.classList.remove("fa-moon");
+        themeBtn.classList.add("fa-sun");
+    }
 })
+
+const savedTheme = localStorage.getItem("theme");
+
+if (savedTheme === "light") {
+    document.documentElement.classList.add("light-theme");
+}
 
 // Current Date And Time -------------------------------------------
 const currentTime = document.getElementById("time");
@@ -23,7 +45,7 @@ function updateDateTime() {
 updateDateTime();
 setInterval(updateDateTime, 1000)
 
-// City Search --------------------------------------------------------------
+// City Search -----------------------------------------------------
 const searchCity = document.getElementById("cityQuery");
 const searchBtn = document.getElementById("srchBtn");
 
@@ -40,6 +62,7 @@ searchBtn.onclick = function () {
     fetchWeather(searchVal);
 }
 
+// Fetch Weather function ---------------------------------------------------------------
 async function fetchWeather(city) {
     const API_KEY = "722a2651b9cdff435886dae03f13f69b"
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`;
@@ -61,7 +84,7 @@ async function fetchWeather(city) {
     }
 }
 
-
+// Update UI function --------------------------------------------------------------
 function updateUi(data) {
     document.getElementById("temp").textContent = `${Math.round(data.main.temp)}°C`
 

@@ -139,11 +139,12 @@ button {
 
 /* --------------------------------------------------- */
 
-#weather-section {
+#weather-section,
+#hourly-forcast-section {
     display: flex;
     justify-content: center;
     gap: 30px;
-    margin-top: 20px;
+    margin: 30px 0px;
     /* font-size: 30px; */
 }
 
@@ -200,7 +201,7 @@ button {
     margin-left: 6.5px;
 }
 
-.daylight-section{
+.daylight-section {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -217,7 +218,7 @@ button {
 }
 
 /* ----------------*/
-.temp-icon-section{
+.temp-icon-section {
     display: flex;
     flex-direction: column;
     gap: 30px;
@@ -229,7 +230,6 @@ button {
     width: 90px;
     /* margin-top: 10px; */
 }
-
 
 /* --------------- */
 
@@ -253,4 +253,50 @@ button {
 .hpus-icon {
     width: 25px;
     height: 25px;
+}
+
+#hourly-forcast-img {
+    width: 45px;
+    height: 45px;
+}
+
+.hourly-forcast {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    padding: 20px;
+    gap: 30px;
+    width: 400px;
+    background-color: #7067677d;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    text-align: center;
+}
+
+.daily-forcast {
+    padding: 20px;
+    align-items: center;
+    border-radius: 12px;
+    width: 400px;
+    background-color: #7067677d;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    text-align: center;
+}
+
+.days-forcast-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.days {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /* gap: 10px; */
+}
+
+footer {
+    background-color: var(--primary);
+    text-align: center;
+    padding: 5px;
 }

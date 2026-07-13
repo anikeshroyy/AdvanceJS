@@ -59,7 +59,8 @@ body {
     line-height: 28px;
     align-items: center;
     position: relative;
-    max-width: 290px;
+    max-width: 500px;
+    width: 100%;
 }
 
 .input {
@@ -76,6 +77,14 @@ body {
     transition: all 0.25s cubic-bezier(0.19, 1, 0.22, 1);
     cursor: text;
     z-index: 0;
+}
+
+#srchBtn {
+    border-radius: 10px;
+    padding: 9.5px;
+    border: none;
+    margin-left: 10px;
+    cursor: pointer;
 }
 
 .input::placeholder {
@@ -267,10 +276,16 @@ button {
     border-radius: 12px;
     padding: 20px;
     gap: 30px;
-    width: 400px;
+    width: 700px;
     background-color: #7067677d;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     text-align: center;
+}
+
+.forcast-container {
+    background-color: var(--placeholder-color);
+    padding: 25px;
+    border-radius: 12px;
 }
 
 .daily-forcast {
@@ -292,11 +307,16 @@ button {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    /* gap: 10px; */
+    gap: 10px;
+    background-color: var(--placeholder-color);
+    margin: 10px;
+    padding: 2px;
+    border-radius: 12px;
 }
 
 footer {
     background-color: var(--primary);
     text-align: center;
     padding: 5px;
+    color: var(--text-color);
 }

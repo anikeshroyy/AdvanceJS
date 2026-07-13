@@ -18,7 +18,7 @@
     <div class="container">
         <section id="nav-section">
             <i class="fa-solid fa-moon theme-icon" id="themeIcon"></i>
-            <!-- <i class="fa-solid fa-sun"></i> -->
+            <!-- <i class="fa-solid fa-sun theme-icon" id="themeIcon"></i> -->
             <div class="group">
                 <svg viewBox="0 0 24 24" aria-hidden="true" class="search-icon">
                     <g>
@@ -28,7 +28,10 @@
                     </g>
                 </svg>
 
-                <input id="query" class="input" type="search" placeholder="Search City..." name="searchbar" />
+                <input id="cityQuery" class="input" type="search" placeholder="Search Your Favourite City..."
+                    name="searchbar" />
+
+                <button id="srchBtn">Search</button>
             </div>
             <button id="currentLocation"><i class="fa-solid fa-location-crosshairs"></i> Current Location</button>
         </section>
@@ -40,9 +43,9 @@
 
         <section id="weather-section">
             <div class="city-card">
-                <p>Madhubani</p>
-                <h1>09:22 <span>AM</span></h1>
-                <p>Monday</p>
+                <p id="city"></p>
+                <h1 id="time"></h1>
+                <p id="date"></p>
             </div>
             <div class="weather-card">
                 <div class="temp-section">

@@ -8,12 +8,17 @@
 
     <link rel="stylesheet" href="./style.css">
     <script src="https://kit.fontawesome.com/f1ad598525.js" crossorigin="anonymous"></script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,100..900;1,100..900&family=Yuyu&display=swap');
+    </style>
 </head>
 
 <body>
     <div class="container">
         <section id="nav-section">
             <i class="fa-solid fa-moon theme-icon" id="themeIcon"></i>
+            <!-- <i class="fa-solid fa-sun"></i> -->
             <div class="group">
                 <svg viewBox="0 0 24 24" aria-hidden="true" class="search-icon">
                     <g>
@@ -26,6 +31,77 @@
                 <input id="query" class="input" type="search" placeholder="Search City..." name="searchbar" />
             </div>
             <button id="currentLocation"><i class="fa-solid fa-location-crosshairs"></i> Current Location</button>
+        </section>
+
+        <section id="header-section">
+            <h1>Weather Dashboard</h1>
+            <p>Check real-time weather conditions and a 7-day forecast for any city.</p>
+        </section>
+
+        <section id="weather-section">
+            <div class="city-card">
+                <p>Madhubani</p>
+                <h1>09:22 <span>AM</span></h1>
+                <p>Monday</p>
+            </div>
+            <div class="weather-card">
+                <div class="temp-section">
+                    <div class="temp-container">
+                        <h2>Temprature</h2>
+                        <p>feels like 22</p>
+                    </div>
+                    <div class="daylight-section">
+                        <div class="sunrise">
+                            <div class="sunrise-icon">
+                                <img src="./sunrise.png" alt="" class="sunrise-icon">
+                            </div>
+                            <div class="sunrise-content">
+                                <p>sunrise</p>
+                                <p>8:37Am</p>
+                            </div>
+                        </div>
+                        <div class="sunset">
+                            <div class="sunset-icon">
+                                <img src="./sunset.png" alt="" class="sunset-icon">
+                            </div>
+                            <div class="sunset-content">
+                                <p>sunset</p>
+                                <p>6:10 Pm</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="temp-icon-section">
+                    <img src="./sun.png" id="sun-img" alt="">
+                    <p style="text-align: center;">Sunny</p>
+                </div>
+                <div class="weather-highlights">
+                    <div class="weather-metric-container">
+                        <div class="weather-metric">
+                            <img src="./humidity.png" alt="" class="hpus-icon">
+                            <p>41%</p>
+                            <p>Humidity</p>
+                        </div>
+                        <div class="weather-metric">
+                            <img src="./barometer.png" alt="" class="hpus-icon">
+                            <p>997hpa</p>
+                            <p>Pressure</p>
+                        </div>
+                    </div>
+                    <div class="weather-metric-container">
+                        <div class="weather-metric">
+                            <img src="./wind.png" alt="" class="hpus-icon">
+                            <p>2km/h</p>
+                            <p>Wind Speed</p>
+                        </div>
+                        <div class="weather-metric">
+                            <img src="./protection.png" alt="" class="hpus-icon">
+                            <p>8</p>
+                            <p>Uv</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
     </div>
 

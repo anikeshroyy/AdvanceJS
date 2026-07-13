@@ -16,8 +16,6 @@
 
     --btn-bg: #fff;
     --btn-text-color: #17153B;
-
-
 }
 
 .light-theme {
@@ -38,6 +36,9 @@
 body {
     background: var(--bg-color);
     color: var(--text-color);
+    font-family: "Saira", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 #nav-section {
@@ -120,4 +121,136 @@ body {
 button {
     background-color: var(--btn-bg);
     color: var(--btn-text-color);
+}
+
+#header-section {
+    text-align: center;
+}
+
+#header-section h1 {
+    font-size: 70px;
+}
+
+#header-section p {
+    font-size: 24px;
+}
+
+
+
+/* --------------------------------------------------- */
+
+#weather-section {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+    /* font-size: 30px; */
+}
+
+.city-card {
+    /* border: 2px solid var(--primary); */
+    border-radius: 12px;
+    width: 400px;
+    padding: 50px 0px;
+    text-align: center;
+    font-size: 25px;
+    background-color: #7067677d;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.weather-card {
+    display: flex;
+    justify-content: center;
+    /* border: 2px solid var(--primary); */
+    border-radius: 12px;
+    padding: 20px;
+    gap: 30px;
+    width: 700px;
+    background-color: #7067677d;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.temp-section,
+.temp-icon-section,
+.weather-highlights {
+    /* border: 2px solid rgb(174, 199, 10); */
+    border-radius: 12px;
+    padding: 10px;
+}
+
+
+
+.temp-container {
+    text-align: center;
+}
+
+
+
+.sunrise-icon {
+    height: 50px;
+    width: 50px;
+}
+
+.sunset-icon {
+    height: 43px;
+    width: 43px;
+}
+
+.sunset-content {
+    margin-left: 6.5px;
+}
+
+.daylight-section{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sunset,
+.sunrise {
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    border: 1px solid var(--btn-bg);
+    border-radius: 10px;
+    margin: 5px 0px;
+}
+
+/* ----------------*/
+.temp-icon-section{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 25px;
+}
+
+#sun-img {
+    height: 90px;
+    width: 90px;
+    /* margin-top: 10px; */
+}
+
+
+/* --------------- */
+
+.weather-highlights {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.weather-metric-container {
+    text-align: center;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.hpus-icon {
+    width: 25px;
+    height: 25px;
 }

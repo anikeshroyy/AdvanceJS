@@ -20,13 +20,81 @@ function updateDateTime() {
     currentTime.textContent = now.toLocaleTimeString();
 }
 
+updateDateTime();
 setInterval(updateDateTime, 1000)
 
 // City Search --------------------------------------------------------------
 const searchCity = document.getElementById("cityQuery");
 const searchBtn = document.getElementById("srchBtn");
 
+const lastCity = localStorage.getItem("city") || "Delhi";
+fetchWeather(lastCity);
+
 searchBtn.onclick = function () {
     const searchVal = (searchCity.value.trim())
-    document.getElementById("city").textContent = `${searchVal}`;
+
+    localStorage.setItem("city", searchVal);
+
+    if (!searchVal) return;
+
+    fetchWeather(searchVal);
+}
+
+async function fetchWeather(city) {
+    const API_KEY = "722a2651b9cdff435886dae03f13f69b"
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`;
+
+    try {
+        const response = await fetch(url);
+
+        if (!response.ok) {
+            throw new Error("city not found")
+        }
+
+        const data = await response.json();
+        console.log(data);
+
+        updateUi(data)
+    }
+    catch (error) {
+        console.log(error.message);
+    }
+}
+
+
+function updateUi(data) {
+    document.getElementById("temp").textContent = `${Math.round(data.main.temp)}°C`
+
+    document.getElementById("feelsLike").textContent = `Feels Like ${Math.round(data.main.feels_like)}°C`
+
+    document.getElementById("sunrise").textContent =
+        new Date(data.sys.sunrise * 1000).toLocaleTimeString("en-IN", {
+            hour: "2-digit",
+            minute: "2-digit",
+            hour12: true
+        });
+
+    document.getElementById("sunset").textContent =
+        new Date(data.sys.sunset * 1000).toLocaleTimeString("en-IN", {
+            hour: "2-digit",
+            minute: "2-digit",
+            hour12: true
+        });
+
+    document.getElementById("weatherType").textContent = `${data.weather[0].main}`
+
+    document.getElementById("humidity").textContent = `${data.main.humidity}%`
+
+    document.getElementById("pressure").textContent = `${data.main.pressure}hpA`
+
+    document.getElementById("speed").textContent = `${(data.wind.speed * 3.6).toFixed(1)}Km/hr`
+
+    document.getElementById("visibility").textContent = `${Number(data.visibility / 1000)}Km`
+
+    document.getElementById("city").textContent = data.name;
+
+    const weatherIcon = document.getElementById("sun-img");
+    const icon = data.weather[0].icon
+    const iconUrl = `https://openweathermap.org/img/wn/${icon}@2x.png`;
+    weatherIcon.src = iconUrl
 }

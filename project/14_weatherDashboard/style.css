@@ -224,6 +224,7 @@ button {
     border: 1px solid var(--btn-bg);
     border-radius: 10px;
     margin: 5px 0px;
+    padding: 5px;
 }
 
 /* ----------------*/

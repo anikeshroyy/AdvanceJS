@@ -270,16 +270,21 @@ button {
     height: 45px;
 }
 
+.hourly-forcast-container {
+    background-color: #7067677d;
+    border-radius: 12px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    text-align: center;
+    padding-top: 20px;
+}
+
 .hourly-forcast {
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 12px;
     padding: 20px;
     gap: 30px;
     width: 700px;
-    background-color: #7067677d;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     text-align: center;
 }
 

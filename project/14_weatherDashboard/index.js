@@ -52,6 +52,7 @@ const searchBtn = document.getElementById("srchBtn");
 const lastCity = localStorage.getItem("city") || "Delhi";
 fetchWeather(lastCity);
 updateHourlyForecast(lastCity)
+updateDailyForecast(lastCity)
 
 
 searchBtn.onclick = function () {
@@ -63,6 +64,7 @@ searchBtn.onclick = function () {
 
     fetchWeather(searchVal);
     updateHourlyForecast(searchVal)
+    updateDailyForecast(searchVal)
 }
 
 // Fetch Weather function ---------------------------------------------------------------
@@ -175,4 +177,66 @@ async function updateHourlyForecast(city) {
     catch (error) {
         console.log(error.message);
     }
+}
+
+
+
+async function updateDailyForecast(city) {
+
+    const API_KEY = "722a2651b9cdff435886dae03f13f69b"
+    const url = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${API_KEY}&units=metric`;
+
+    try {
+
+        const response = await fetch(url);
+
+        if (!response.ok) {
+            throw new Error("Forecast not found");
+        }
+
+        const data = await response.json();
+
+        const daily = document.getElementById("dailyForecast");
+
+        daily.innerHTML = "";
+
+        let html = [];
+
+        data.list.forEach(item => {
+
+            // Pick the forecast at 12:00 PM for each day
+            if (item.dt_txt.includes("12:00:00")) {
+
+                const day = new Date(item.dt * 1000)
+                    .toLocaleDateString("en-IN", {
+                        weekday: "long"
+                    });
+
+                html.push(`
+                    <div class="day-card">
+
+                        <p>${day}</p>
+
+                        <img
+                        src="https://openweathermap.org/img/wn/${item.weather[0].icon}@2x.png">
+
+                        <p>${item.weather[0].main}</p>
+
+                        <h3>${Math.round(item.main.temp)}°C</h3>
+
+                    </div>
+                `);
+
+            }
+
+        });
+
+        daily.innerHTML = html.join("");
+
+    } catch (error) {
+
+        console.log(error.message);
+
+    }
+
 }

@@ -289,14 +289,19 @@ button {
     border-radius: 12px;
 }
 
-.daily-forcast {
-    padding: 20px;
-    align-items: center;
-    border-radius: 12px;
-    width: 400px;
+.daily-forcatst-container{
     background-color: #7067677d;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     text-align: center;
+    border-radius: 12px;
+    padding-top: 20px;
+
+}
+
+.daily-forcast {
+    padding: 20px;
+    align-items: center;
+    width: 400px;
 }
 
 .days-forcast-icon {
@@ -304,7 +309,13 @@ button {
     height: 20px;
 }
 
-.days {
+.day-card img{
+    width: 30px;
+    height: 30px;
+}
+
+.days,
+.day-card {
     display: flex;
     justify-content: space-around;
     align-items: center;

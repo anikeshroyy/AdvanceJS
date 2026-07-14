@@ -282,7 +282,8 @@ button {
     text-align: center;
 }
 
-.forcast-container {
+.forcast-container,
+.hour-card {
     background-color: var(--placeholder-color);
     padding: 25px;
     border-radius: 12px;

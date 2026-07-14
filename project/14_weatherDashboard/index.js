@@ -8,14 +8,14 @@ themeBtn.addEventListener("click", () => {
         localStorage.setItem("theme", "light")
 
 
-         themeBtn.classList.remove("fa-sun");
+        themeBtn.classList.remove("fa-sun");
         themeBtn.classList.add("fa-moon");
-          
+
     }
     else {
         localStorage.setItem("theme", "dark")
 
-         themeBtn.classList.remove("fa-moon");
+        themeBtn.classList.remove("fa-moon");
         themeBtn.classList.add("fa-sun");
     }
 })
@@ -51,6 +51,8 @@ const searchBtn = document.getElementById("srchBtn");
 
 const lastCity = localStorage.getItem("city") || "Delhi";
 fetchWeather(lastCity);
+updateHourlyForecast(lastCity)
+
 
 searchBtn.onclick = function () {
     const searchVal = (searchCity.value.trim())
@@ -60,6 +62,7 @@ searchBtn.onclick = function () {
     if (!searchVal) return;
 
     fetchWeather(searchVal);
+    updateHourlyForecast(searchVal)
 }
 
 // Fetch Weather function ---------------------------------------------------------------
@@ -120,4 +123,56 @@ function updateUi(data) {
     const icon = data.weather[0].icon
     const iconUrl = `https://openweathermap.org/img/wn/${icon}@2x.png`;
     weatherIcon.src = iconUrl
+}
+
+
+async function updateHourlyForecast(city) {
+
+    const API_KEY = "722a2651b9cdff435886dae03f13f69b"
+    const url = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${API_KEY}&units=metric`;
+
+    try {
+        const response = await fetch(url);
+
+        if (!response.ok) {
+            throw new Error("city not found")
+        }
+
+        const data = await response.json();
+
+        console.log(data)
+
+        const hourly = document.getElementById("hourlyForecast");
+
+        hourly.innerHTML = "";
+
+        data.list.slice(0, 5).forEach(item => {
+
+            const hour =
+                new Date(item.dt * 1000).toLocaleTimeString("en-IN", {
+                    hour: "numeric",
+                    hour12: true
+                });
+
+            const icon = item.weather[0].icon;
+
+            hourly.innerHTML += `
+            <div class="hour-card">
+
+                <p>${hour}</p>
+
+                <img
+                src="https://openweathermap.org/img/wn/${icon}.png">
+
+                <h3>${Math.round(item.main.temp)}°</h3>
+
+            </div>
+        `;
+
+
+        })
+    }
+    catch (error) {
+        console.log(error.message);
+    }
 }

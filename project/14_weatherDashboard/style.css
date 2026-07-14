@@ -145,7 +145,6 @@ button {
 }
 
 
-
 /* --------------------------------------------------- */
 
 #weather-section,
@@ -188,13 +187,9 @@ button {
     padding: 10px;
 }
 
-
-
 .temp-container {
     text-align: center;
 }
-
-
 
 .sunrise-icon {
     height: 50px;
@@ -242,7 +237,6 @@ button {
 }
 
 /* --------------- */
-
 .weather-highlights {
     display: flex;
     justify-content: center;
